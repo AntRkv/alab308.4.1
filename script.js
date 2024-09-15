@@ -34,4 +34,26 @@ row.forEach((row) => {
   arr.push(newRow);
 });
 
-console.log(arr);
+// console.log(arr);
+
+// Declare a variable that stores the number of columns in each row of data within the CSV.
+// Instead of hard-coding four columns per row, expand your code to accept any number of columns. This should be calculated dynamically based on the first row of data.
+
+let strSec =
+  "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+let arrN = strSec.split("\n");
+let numOfCol = arrN[0].split(",");
+
+
+let twoDimensionalArray = new Array(numOfCol.length);
+for (let i = 0; i < twoDimensionalArray.length; i++) {
+  twoDimensionalArray[i] = new Array(numOfCol.length);
+}
+
+for (let i = 0; i < numOfCol.length; i++) {
+  let arrTemp = arrN[i].split(",");
+  for (let x = 0; x < numOfCol.length; x++) {
+    twoDimensionalArray[i][x] = arrTemp[x];
+  }
+}
+console.log(twoDimensionalArray);
