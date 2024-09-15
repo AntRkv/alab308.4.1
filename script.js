@@ -84,7 +84,7 @@ for (let i = 1; i < input.length; i++) {
   output.push(objA);
 }
 
-console.log(output);
+// console.log(output);
 
 // Remove the last element from the sorted array.
 // Insert the following object at index 1:
@@ -103,7 +103,7 @@ output.splice(1, 0, {
 
 output.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
 
-console.log(output);
+// console.log(output);
 
 // [
 //   { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
@@ -112,3 +112,21 @@ console.log(output);
 //   { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
 //   { id: "7", name: "Bilbo", occupation: "None", age: "111" },
 // ];
+
+let keys = "";
+keys = Object.keys(output[0]);
+let strIdS = "";
+let outputFinal = "";
+
+keys.forEach((element) => {
+  strIdS += element + ",";
+});
+
+for (let index = 0; index < output.length; index++) {
+  const element = Object.values(output[index]);
+  outputFinal = outputFinal.concat("\\n" + element);
+}
+outputFinal = strIdS + outputFinal;
+console.log(outputFinal);
+
+// ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26
