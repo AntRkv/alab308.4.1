@@ -85,3 +85,30 @@ for (let i = 1; i < input.length; i++) {
 }
 
 console.log(output);
+
+// Remove the last element from the sorted array.
+// Insert the following object at index 1:
+// { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+// Add the following object to the end of the array:
+// { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+
+output.pop();
+
+output.splice(1, 0, {
+  id: "48",
+  name: "Barry",
+  occupation: "Runner",
+  age: "25",
+});
+
+output.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+
+console.log(output);
+
+// [
+//   { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+//   { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+//   { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+//   { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+//   { id: "7", name: "Bilbo", occupation: "None", age: "111" },
+// ];
